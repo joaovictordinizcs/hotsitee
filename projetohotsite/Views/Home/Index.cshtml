@@ -1,0 +1,296 @@
+﻿@model Interesse
+@{
+    ViewData["Title"] = "Iniciativa Saude da Cidade";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saude</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+ 
+
+<style>
+
+    main{
+        background-color: #00FFFF;
+        margin: 45px;
+        padding: 29px;
+        position: absolute;
+    }
+
+
+     body{
+        background-color: white;
+     }
+
+
+    #div{
+        border: solid 1px black;
+         border-radius: 5px;
+    }
+    #img{
+        width: 600px;
+        height: 300px;
+         border-radius: 5px;
+    }
+    #btn{
+        display: flex;
+        transform: translateX(-0x)translateY(-0px);
+        align-items: flex-end;
+        
+        
+      
+    }
+    .car{
+        display: flex;
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        cursor:pointer;
+        border-radius: 5px;
+    }
+    #col2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+    }
+    #cars{
+        display: flex;
+        gap:30px;
+    }
+    #imgs{
+        display: flex;
+        width: 100px;
+        height: 100px;
+         border-radius: 5px;
+    }
+    .info{
+       display: none;
+
+
+    }
+    .posinfo{
+          position: absolute;
+        transform: translateX(300px)translateY(-500px);
+        height: 510px;
+        width: 400px;
+        background-color: #faf9f9;
+        border-radius:15px ;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border: solid 1px black;
+    }
+    .info2{
+       display: none;
+
+
+    }
+    .posinfo2{
+          position: absolute;
+        transform: translateX(300px)translateY(-500px);
+        height: 510px;
+        width: 400px;
+        background-color: #faf9f9;
+        border-radius:15px ;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border: solid 1px black;
+    }
+    .info3{
+       display: none;
+
+
+    }
+    .posinfo3{
+          position: absolute;
+        transform: translateX(300px)translateY(-500px);
+        height: 510px;
+        width: 400px;
+        background-color: #faf9f9;
+        border-radius:15px ;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border: solid 1px black;
+    }
+    span p {
+        font-size: 14px;
+    }
+    .ca{
+        width:80px;
+        height: 50px;
+        background-color: #584b4b;
+    }
+   #carsd2 span{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+   }
+</style>
+</head>
+<body>
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="tituloborda"> Iniciativa Saude da Cidade </h1>
+      <p class="borda1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quam accusamus, quidem ea repellat atque eveniet, ipsa nemo libero facilis harum placeat officiis vero minima aliquam? Amet illum labore corrupti?
+      </p>
+      <p class="borda2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum tenetur necessitatibus, deserunt officia illo distinctio. Harum autem repellat unde rerum non. Soluta similique laborum voluptate fugiat, ad enim vero officiis.</p>
+        <div class="row">
+            <div class="col" id="div">
+              <form method="post" asp-controller="Home" asp-action="Index">
+                 <div class="mb-3">
+                    <label for="Nome" class="form-label">Nome</label>
+                    <input asp-for="Nome" type="text" class="form-control" id="Nome" placeholder="EX: Paulo Guimaraes">
+            </div>
+            <div class="mb-3">
+                     <label for="Email" class="form-label">Email </label>
+                     <input asp-for="Email" type="email" class="form-control" id="Email" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                     <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
+                    <textarea asp-for="Mensagem" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            
+            <div class="mb-3">
+                <br>
+                <button onclick="alerta()" id="btn" asp-action="Cadastrar"  class="btn btn-light">Cadastrar</button>
+              </form>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col" id="col2">
+        <div class="row">
+            <img id="img" src="~/Assets/R (1).jpg" class="img-fluid" alt="...">
+        </div>
+       <div class="row" id="cars">
+            <div class="col">
+            <span>
+                 <div class="car"> <img id="imgs"   k="ag()" src="~/Assets/R.png" class="img-fluid" alt="..."> </div>
+                 <p>Agenda de Eventos</p>
+            </span>
+            </div>
+             <div class="col">
+              <span>
+                 <div class="car"> <img id="imgs" onclick="dicas()" src="~/Assets/OIP (3).jpg" class="img-fluid" alt="..."> </div>
+                 <p>Dicas de vida Saudavel</p>
+            </span>
+            </div>
+             <div class="col">
+               <span>
+                 <div class="car"> <img id="imgs" onclick="apoia()" src="~/Assets/OIP (2).jpg" class="img-fluid" alt="..."> </div>
+                 <p>Apoiadores</p>
+            </span>
+        </div>
+    </div>
+ 
+  </div>
+</div>
+<script>
+    function ag(){
+          var carsd = document.getElementById("carsd")
+     carsd.setAttribute("class", "posinfo")
+    
+    }
+    function dicas(){
+          var carsd2 = document.getElementById("carsd2")
+     carsd2.setAttribute("class", "posinfo2")
+     var imgs = document.getElementById("imgs")
+    }
+    function apoia(){
+     var carsd3 = document.getElementById("carsd3")
+     carsd3.setAttribute("class", "posinfo3")
+     var imgs = document.getElementById("imgs")
+  
+
+    }
+    function closeapoia(){
+        var carsd = document.getElementById("carsd")
+       
+     carsd.setAttribute("class", "info")
+  
+    }
+     function closeapoia3(){
+        var carsd2 = document.getElementById("carsd3")
+       
+     carsd2.setAttribute("class", "info3")
+  
+    }
+     function closeapoia2(){
+        var carsd3 = document.getElementById("carsd2")
+       
+     carsd3.setAttribute("class", "info2")
+  
+    }
+   
+</script>
+<div id="carsd" class="info">
+    <h1>Agenda</h1>
+<span>
+    <p>20/10/2023 - Encontro VDS</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quas dignissimos quis consequuntur quibusdam officiis deserunt qui autem voluptas placeat, illum omnis dicta beatae enim, tempore pariatur inventore iste quisquam.</p>
+</span>
+<span>
+    <p>31/11/2023 - LIVE Dicas</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet aperiam temporibus aliquam rem voluptatem. Officia aperiam fuga vitae ut explicabo quae, distinctio iste exercitationem laudantium, porro magni aspernatur. Mollitia, perferendis.</p>
+</span>
+<span>
+    <p>22/12/2023 - Curso Receitas</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rerum rem laboriosam minus ratione voluptas, necessitatibus vel minima vitae expedita eveniet, consectetur molestias! Optio perspiciatis aut architecto in ullam vitae!</p>
+</span>
+<span>
+    <button type="button" onclick="closeapoia()" class="btn btn-warning">fechar</button>
+</span>
+</div>
+<div id="carsd2" class="info2">
+    <h1>Apoiadores</h1>
+<span>
+   <div class="ca"></div>
+    <p>Lojas Americanas</p>
+    <p>Descrição</p>
+</span>
+<span>
+   <div class="ca"></div>
+     <p> Casas Bahia</p>
+    <p>Descrição</p>
+</span>
+<span>
+   <div class="ca"></div>
+     <p> Dell</p>
+    <p>Descrição</p>
+</span>
+<span>
+    <button type="button" onclick="closeapoia2()" class="btn btn-warning">fechar</button>
+</span>
+</div>
+<div id="carsd3" class="info3">
+    <h1>Dicas de Vida Saudavel</h1>
+<span>
+    
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quas dignissimos quis consequuntur quibusdam officiis deserunt qui autem voluptas placeat, illum omnis dicta beatae enim, tempore pariatur inventore iste quisquam.</p>
+</span>
+<span>
+   
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet aperiam temporibus aliquam rem voluptatem. Officia aperiam fuga vitae ut explicabo quae, distinctio iste exercitationem laudantium, porro magni aspernatur. Mollitia, perferendis.</p>
+</span>
+<span>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rerum rem laboriosam minus ratione voluptas, necessitatibus vel minima vitae expedita eveniet, consectetur molestias! Optio perspiciatis aut architecto in ullam vitae!</p>
+</span>
+<span>
+    <button type="button" onclick="closeapoia3()" class="btn btn-warning">fechar</button>
+</span>
+</div>
+</body>
+</html>
